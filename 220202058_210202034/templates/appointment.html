@@ -1,0 +1,258 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <h3 class="text-center">Randevu Alın</h3>
+    <hr />
+    <form method="post">
+      
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="name" class="form-label">İsim</label>
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="name"
+            name="name"
+            value="{{data[0]}}" readonly
+            required autocomplete="off"
+          />
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="surname" class="form-label">Soyisim</label>
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="surname"
+            name="surname"
+            value="{{data[1]}}" readonly
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="birthdate" class="form-label">Doğum Tarihi</label>
+            <input
+              type="text"
+              class="form-control-plaintext"
+              id="birthdate"
+              name="birthdate"
+              value="{{data[2]}}" readonly
+              required autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="gender" class="form-label">Cinsiyet</label>
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="gender"
+            name="gender"
+            value="{{data[3]}}" readonly
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <label for="phone" class="form-label">Telefon</label>
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="phone"
+            name="phone"
+            value="{{data[4]}}" readonly
+            required autocomplete="off"
+          /> 
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Adres</label>
+          <input
+            type="text"
+            class="form-control-plaintext"
+            id="address"
+            name="address"
+            value="{{data[5]}}" readonly
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="mb-3">
+              <label for="department" class="form-label">Bölüm</label>
+              <select class="form-select" name="department" id="department">
+                <option value="Anatomi" selected>Anatomi</option>
+                <option value="Biyofizik">Biyofizik</option>
+                <option value="Tıbbi Biyoloji">Tıbbi Biyoloji</option>
+                <option value="Tıp Eğitimi">Tıp Eğitimi</option>
+                <option value="Tıp Etiği ve Tıp Tarihi">
+                  Tıp Etiği ve Tıp Tarihi
+                </option>
+                <option value="İmmünoloji">İmmünoloji</option>
+                <option value="Fizyoloji">Fizyoloji</option>
+                <option value="Histoloji ve Embriyoloji">
+                  Histoloji ve Embriyoloji
+                </option>
+                <option value="Tıbbi Mikrobiyoloji">Tıbbi Mikrobiyoloji</option>
+                <option value="Tıp Bilişimi">Tıp Bilişimi</option>
+                <option value="Tıbbi Biyokimya">Tıbbi Biyokimya</option>
+                <option value="Dahili Tıp Bilimleri">Dahili Tıp Bilimleri</option>
+                <option value="Acil Tıp">Acil Tıp</option>
+                <option value="Adli Tıp">Adli Tıp</option>
+                <option value="Çocuk Ruh Sağlığı">Çocuk Ruh Sağlığı</option>
+                <option value="Çocuk Sağlığı ve Hastalıkları">
+                  Çocuk Sağlığı ve Hastalıkları
+                </option>
+                <option value="Dermatoloji">Dermatoloji</option>
+                <option value="Enfeksiyon Hastalıkları">
+                  Enfeksiyon Hastalıkları
+                </option>
+                <option value="Fiziksel Tıp ve Rehabilitasyon">
+                  Fiziksel Tıp ve Rehabilitasyon
+                </option>
+                <option value="Göğüs Hastalıkları">Göğüs Hastalıkları</option>
+                <option value="Halk Sağlığı">Halk Sağlığı</option>
+                <option value="İç Hastalıkları">İç Hastalıkları</option>
+                <option value="Kardiyoloji">Kardiyoloji</option>
+                <option value="Nöroloji">Nöroloji</option>
+                <option value="Nükleer Tıp">Nükleer Tıp</option>
+                <option value="Radyasyon Onkolojisi">Radyasyon Onkolojisi</option>
+                <option value="Radyoloji">Radyoloji</option>
+                <option value="Psikiyatri">Psikiyatri</option>
+                <option value="Tıbbi Farmakoloji">Tıbbi Farmakoloji</option>
+                <option value="Tıbbi Genetik">Tıbbi Genetik</option>
+                <option value="Cerrahi Tıp Bilimleri">
+                  Cerrahi Tıp Bilimleri
+                </option>
+                <option value="Anestezi ve Reanimasyon">
+                  Anestezi ve Reanimasyon
+                </option>
+                <option value="Beyin ve Sinir Cerrahisi">
+                  Beyin ve Sinir Cerrahisi
+                </option>
+                <option value="Çocuk Cerrahisi">Çocuk Cerrahisi</option>
+                <option value="Genel Cerrahi">Genel Cerrahi</option>
+                <option value="Kalp ve Damar Cerrahisi">
+                  Kalp ve Damar Cerrahisi
+                </option>
+                <option value="Göğüs Cerrahisi">Göğüs Cerrahisi</option>
+                <option value="Göz Hastalıkları">Göz Hastalıkları</option>
+                <option value="Kadın Hastalıkları ve Doğum">
+                  Kadın Hastalıkları ve Doğum
+                </option>
+                <option value="Kulak Burun Boğaz">Kulak Burun Boğaz</option>
+                <option value="Ortopedi ve Travmatoloji">
+                  Ortopedi ve Travmatoloji
+                </option>
+                <option value="Tıbbi Patoloji">Tıbbi Patoloji</option>
+                <option value="Üroloji">Üroloji</option>
+                <option value="Plastik Rekonstrüktif ve Estetik Cerrahi">
+                  Plastik Rekonstrüktif ve Estetik Cerrahi
+                </option>
+              </select>
+            </div>
+            
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="appointment_date" class="form-label">Gün Seçiniz</label>
+              <input
+                class="date-input form-control"
+                type="date"
+                id="appointment_date"
+                name="appointment_date"
+                value="2024-06-25"
+                required autocomplete="off"
+              />
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="time" class="form-label">Saat</label>
+          <select class="form-select" id="time" name="time">
+            <option value="08:00" selected>08.00</option>
+            <option value="09:00">09.00</option>
+            <option value="10:00">10.00</option>
+            <option value="11:00">11.00</option>
+            <option value="12:00">12.00</option>
+            <option value="13:00">13.00</option>
+            <option value="14:00">14.00</option>
+            <option value="15:00">15.00</option>
+            <option value="16:00">16.00</option>
+            <option value="17:00">17.00</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+            <label for="details" class="form-label">Detaylar</label>
+          <input
+            type="text"
+            class="form-control"
+            id="details"
+            name="details"
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          style="width: 100%"
+          type="submit"
+          class="btn btn-primary mt-4 mb-4"
+        >
+          Randevu Al
+        </button>
+      </div>  
+    </form>
+
+    {% if info%}
+    <table id="" class="table table-hover table-striped mt-5 text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Doktor ID</th>
+          <th scope="col">Zaman</th>
+          <th scope="col">Randevu Alın</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for apponitmentID,patientID,doctorID,app_date,app_time,details,granted in info %}
+        <tr>
+          <th scope="row">#</th>
+          <td>{{doctorID}}</td>
+          <td>{{app_time}}</td>
+          <td><a href="{{url_for('grant_appointment',id=apponitmentID)}}" class="btn btn-danger">Randevu Alın</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    {% endif %}
+
+    
+  </div>
+  
+</div>
+
+{% endblock body %} 
+
+{% if indexx %}
+{% block script %}
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var selectElement = document.getElementById("department");
+
+    selectElement.selectedIndex = {{indexx}} 
+  })
+</script>
+{% endblock script %}
+{% else %}
+
+{% endif %}
+

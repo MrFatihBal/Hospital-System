@@ -1,0 +1,59 @@
+{% extends "layout.html" %} 
+{% block body %}
+<div class="row">
+    <div class="col-md-9">
+        <h5>Doktorlar</h5>
+        <hr>
+        <table id="meinemTisch" class="table text-center table-hover table-striped mt-1 text-center">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">İsim</th>
+                <th scope="col">Doğum Tarihi</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">Adres</th>
+                <th scope="col">Departman</th>
+                <th scope="col">Verileri Düzenle</th>
+                <th scope="col">Doktoru Sil</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for attr in data %}
+              <tr>
+                <th scope="row">{{attr[0]}}</th>
+                <td>{{attr[1] + " " + attr[2]}}</td>
+                <td>{{attr[6]}}</td>
+                <td>{{attr[8]}}</td>
+                <td>{{attr[9]}}</td>
+                <td>{{attr[10]}}</td>
+                <td><a href="{{url_for('editdoctor_grant',id=attr[0])}}" class="btn btn-warning">Düzenle</a></td>
+                <td><a href="{{url_for('deletedoctor_grant',id=attr[0])}}" id="doctor_{{attr[0]}}" class="btn btn-danger">
+                Sil
+                </a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% if mt==True %}
+          <p>10'dan fazla doktor var. Tamamını görüntülemek için Tüm Doktorları Görüntüle'ye tıklayın.</p>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-6">
+              <a style="width:100%" class="btn btn-success" href="{{url_for('doctorregister')}}">Doktor Ekle</a>
+            </div>
+            <div class="col-md-6">
+              <a style="width:100%" class="btn btn-primary" href="{{url_for('show_doctors')}}">Tüm Doktorları Görüntüle</a>
+            </div>
+          </div>
+          
+    </div>
+    
+</div>
+
+{% endblock body %}
+
+{% block script %}
+<script>//new DataTable("#meinemTisch");</script>
+
+
+{% endblock script %}

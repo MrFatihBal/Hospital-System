@@ -1,0 +1,116 @@
+{% extends "layout.html" %} {% block body %}
+<div class="row">
+  <div class="col-md-3 d-flex align-items-center">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{doctor[1] + " " + doctor[2]}}</h5>
+        <p class="text-secondary mb-1">{{doctor[8]}}</p>
+        <p class="text-secondary mb-3">{{doctor[7]}}</p>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Detayları Göster
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h3 class="text-center">Hastalarım</h3>
+    <hr />
+    <table id="" class="table table-hover table-striped mt-5 text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">İsim</th>
+          <th scope="col">Doğum Tarihi</th>
+          <th scope="col">Cinsiyet</th>
+          <th scope="col">Telefon Numarası</th>
+          <th scope="col">Adres</th>
+          <th scope="col">Tedavi Durumu</th>
+          <th scope="col">Detaylar</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for index,app in apps %}
+        <tr>
+          <th scope="row">#</th>
+          <td>{{patients[index][1] + " " + patients[index][2]}}</td>
+          <td>{{patients[index][6]}}</td>
+          <td>{{patients[index][7]}}</td>
+          <td>{{patients[index][8]}}</td>
+          <td>{{patients[index][9]}}</td>
+          {% if app[6] == '0' %}
+          <td>Tedavi Edilmedi</td>
+          {% else %}
+          <td>Tedavi Edildi</td>
+          {% endif %}
+          
+          <td><a href="" class="btn btn-info">Detayları Görüntüle</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{doctor[1] + " " + doctor[2]}}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Doktor ID: {{doctor[0]}}</p>
+        <p>İsim: {{doctor[1]}}</p>
+        <p>Soyisim: {{doctor[2]}}</p>
+        <p>Doğum Tarihi: {{doctor[6]}}</p>
+        <p>Cinsiyet: {{doctor[7]}}</p>
+        <p>Telefon Numarası: {{doctor[8]}}</p>
+        <p>Adres: {{doctor[9]}}</p>
+        <p>Departman: {{doctor[10]}}</p>
+        <p>Hastane: {{doctor[11]}}</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{url_for('index')}}" class="btn btn-primary" data-bs-dismiss="modal">
+          Anladım
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

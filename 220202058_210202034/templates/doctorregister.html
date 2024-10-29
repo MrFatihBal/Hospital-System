@@ -1,0 +1,223 @@
+{% extends "layout.html" %} {% block body %}
+<h3 class="text-center">Doktor Kayıt Formu</h3>
+<hr />
+<div class="porowrap">
+  <div class="row">
+      <div class="porowrap col-md-6">
+          <img class="img-fluid rgform" src="{{url_for('static',filename='img/drblue.png')}}" alt="">
+      </div>
+      <div class="col-md-6" >
+        
+        <form method="post" class="needs-validation" novalidate>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+              <label for="name" class="form-label">İsim</label>
+              <input type="text" class="form-control" id="name" name="name" required autocomplete="off"/>
+              <div class="invalid-feedback">
+                Lütfen bu alanı doldurun!
+              </div>
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="surname" class="form-label">Soyisim</label>
+              <input type="text" class="form-control" id="surname" name="surname" required autocomplete="off"/>
+              <div class="invalid-feedback">
+                Lütfen bu alanı doldurun!
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label" for="">Email</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="email" aria-label="Username" name="emailhead" required>
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" placeholder="@gmail.com" aria-label="Server" name="emailbottom" required>
+                <div class="invalid-feedback">
+                  Lütfen bu alanı doldurun!
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="username" class="form-label">Kullanıcı Adı</label>
+                <input type="text" class="form-control" id="username" name="username" required autocomplete="off"/>
+                <div id="usernamehelp" class="form-text">Giriş yapmak için buna ihtiyacın olacak</div>
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" id="password" name="password" required autocomplete="off"/>
+                <div class="invalid-feedback">
+                  Lütfen bu alanı doldurun!
+                </div>
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="birthdate" class="form-label">Doğum Tarihi</label>
+                <input
+                  class="date-input form-control"
+                  type="date"
+                  id="birthdate"
+                  name="birthdate" required autocomplete="off"
+                />
+                <div class="invalid-feedback">
+                  Lütfen bu alanı doldurun!
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="gender" class="form-label">Cinsiyet</label>
+                <select class="form-select" id="gender" name="gender">
+                  <option value="Erkek" selected>Erkek</option>
+                  <option value="Kadın">Kadın</option>
+                  <option value="Non-Binary">Non-Binary</option>
+                  <option value="Transgender">Transgender</option>
+                  <option value="Atak Helikopteri">Atak Helikopteri</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="profession" class="form-label">Bölüm</label>
+                <select class="form-select" name="profession" id="profession">
+                  <option value="Anatomi" selected>Anatomi</option>
+                  <option value="Biyofizik">Biyofizik</option>
+                  <option value="Tıbbi Biyoloji">Tıbbi Biyoloji</option>
+                  <option value="Tıp Eğitimi">Tıp Eğitimi</option>
+                  <option value="Tıp Etiği ve Tıp Tarihi">
+                    Tıp Etiği ve Tıp Tarihi
+                  </option>
+                  <option value="İmmünoloji">İmmünoloji</option>
+                  <option value="Fizyoloji">Fizyoloji</option>
+                  <option value="Histoloji ve Embriyoloji">
+                    Histoloji ve Embriyoloji
+                  </option>
+                  <option value="Tıbbi Mikrobiyoloji">Tıbbi Mikrobiyoloji</option>
+                  <option value="Tıp Bilişimi">Tıp Bilişimi</option>
+                  <option value="Tıbbi Biyokimya">Tıbbi Biyokimya</option>
+                  <option value="Dahili Tıp Bilimleri">Dahili Tıp Bilimleri</option>
+                  <option value="Acil Tıp">Acil Tıp</option>
+                  <option value="Adli Tıp">Adli Tıp</option>
+                  <option value="Çocuk Ruh Sağlığı">Çocuk Ruh Sağlığı</option>
+                  <option value="Çocuk Sağlığı ve Hastalıkları">
+                    Çocuk Sağlığı ve Hastalıkları
+                  </option>
+                  <option value="Dermatoloji">Dermatoloji</option>
+                  <option value="Enfeksiyon Hastalıkları">
+                    Enfeksiyon Hastalıkları
+                  </option>
+                  <option value="Fiziksel Tıp ve Rehabilitasyon">
+                    Fiziksel Tıp ve Rehabilitasyon
+                  </option>
+                  <option value="Göğüs Hastalıkları">Göğüs Hastalıkları</option>
+                  <option value="Halk Sağlığı">Halk Sağlığı</option>
+                  <option value="İç Hastalıkları">İç Hastalıkları</option>
+                  <option value="Kardiyoloji">Kardiyoloji</option>
+                  <option value="Nöroloji">Nöroloji</option>
+                  <option value="Nükleer Tıp">Nükleer Tıp</option>
+                  <option value="Radyasyon Onkolojisi">Radyasyon Onkolojisi</option>
+                  <option value="Radyoloji">Radyoloji</option>
+                  <option value="Psikiyatri">Psikiyatri</option>
+                  <option value="Tıbbi Farmakoloji">Tıbbi Farmakoloji</option>
+                  <option value="Tıbbi Genetik">Tıbbi Genetik</option>
+                  <option value="Cerrahi Tıp Bilimleri">
+                    Cerrahi Tıp Bilimleri
+                  </option>
+                  <option value="Anestezi ve Reanimasyon">
+                    Anestezi ve Reanimasyon
+                  </option>
+                  <option value="Beyin ve Sinir Cerrahisi">
+                    Beyin ve Sinir Cerrahisi
+                  </option>
+                  <option value="Çocuk Cerrahisi">Çocuk Cerrahisi</option>
+                  <option value="Genel Cerrahi">Genel Cerrahi</option>
+                  <option value="Kalp ve Damar Cerrahisi">
+                    Kalp ve Damar Cerrahisi
+                  </option>
+                  <option value="Göğüs Cerrahisi">Göğüs Cerrahisi</option>
+                  <option value="Göz Hastalıkları">Göz Hastalıkları</option>
+                  <option value="Kadın Hastalıkları ve Doğum">
+                    Kadın Hastalıkları ve Doğum
+                  </option>
+                  <option value="Kulak Burun Boğaz">Kulak Burun Boğaz</option>
+                  <option value="Ortopedi ve Travmatoloji">
+                    Ortopedi ve Travmatoloji
+                  </option>
+                  <option value="Tıbbi Patoloji">Tıbbi Patoloji</option>
+                  <option value="Üroloji">Üroloji</option>
+                  <option value="Plastik Rekonstrüktif ve Estetik Cerrahi">
+                    Plastik Rekonstrüktif ve Estetik Cerrahi
+                  </option>
+                </select>
+              </div>
+              
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="phone" class="form-label">Telefon</label>
+                <input type="text" autocomplete="off" class="form-control" id="phone" name="phone" required/>
+                <div class="invalid-feedback">
+                  Lütfen bu alanı doldurun!
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <div class="mb-3">
+                <label for="address" class="form-label">Adres</label>
+                <input type="text" autocomplete="off" class="form-control" id="address" name="address" required/>
+                <div class="invalid-feedback">
+                  Lütfen bu alanı doldurun!
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label for="hospital" class="form-label">Hastane</label>
+                <select class="form-select" id="hospital" name="hospital">
+                  <option value="LaDoctor" selected>LaDoctor</option>
+                  <option value="Hacettepe">Hacettepe</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <button style="width:100%" type="submit" class="btn btn-primary mt-4 mb-4">Gönder</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+  (() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
+{% endblock script %}

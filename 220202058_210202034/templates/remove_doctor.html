@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="row">
+  <div class="col-md-10 offset-md-1">
+    <h3 class="text-center">Doktoru Silin</h3>
+    <hr />
+    <form method="post">
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="name" class="form-label">İsim</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            value="{{data[1]}}" disabled
+            required autocomplete="off"
+          />
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="surname" class="form-label">Soyisim</label>
+          <input
+            type="text"
+            class="form-control"
+            id="surname"
+            name="surname"
+            value="{{data[2]}}" disabled
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="birthdate" class="form-label">Doğum Tarihi</label>
+            <input
+              type="text"
+              class="form-control"
+              id="birthdate"
+              name="birthdate"
+              value="{{data[4]}}" disabled
+              required autocomplete="off"
+            />
+          </div>
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="gender" class="form-label">Cinsiyet</label>
+          <input
+            type="text"
+            class="form-control"
+            id="gender"
+            name="gender"
+            value="{{data[5]}}" disabled
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <label for="phone" class="form-label">Telefon</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            name="phone"
+            value="{{data[6]}}" disabled
+            required autocomplete="off"
+          />
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Adres</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            name="address"
+            value="{{data[7]}}" disabled
+            required autocomplete="off"
+          />
+        </div>
+      </div>
+      <div class="row mt-3">
+      </div>
+      <div class="text-center">
+        <a
+        href="{{url_for('deletedoctor',id=data[0])}}"
+          style="width: 100%"
+          class="btn btn-danger mt-4 mb-4"
+        >
+          Doktoru Sil
+      </a>
+      </div>
+      
+    </form>
+
+
+    
+  </div>
+  
+</div>
+
+{% endblock body %} 
